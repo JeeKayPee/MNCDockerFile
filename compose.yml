@@ -1,0 +1,20 @@
+# Version number set
+version: '0.1"
+# Servuce - theory
+services:
+    db: //this is just a label
+      image: mongo:latest //this is a mango db. theory
+      ports: 
+        - '27017:27017'
+
+    backend: //This is also a label
+      image: myNameSpace/whateveryournamingconvention:latest # Repeated at line 18
+      ports: 
+        - '3030:3030'
+      links: //TBD
+        - db
+
+    frontend:
+      image: myNameSpace/whateveryournamingconvention:latest
+      ports:
+        - '3000:3000'
